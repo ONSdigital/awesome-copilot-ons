@@ -1,0 +1,107 @@
+name: "Experiment"
+description: "Workstream A experiment: record priors, method, results, decision"
+title: "[Experiment] <short title>"
+labels: ["artefact/experiment", "status/triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for structured experiments with GitHub Copilot for RAP development & maintenance.
+  - type: dropdown
+    id: substantive
+    attributes:
+      label: "Substantive area"
+      options:
+        - "substantive/greenfield"
+        - "substantive/brownfield"
+        - "substantive/docs-refactor"
+        - "substantive/other"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic_primary
+    attributes:
+      label: "Primary topic"
+      options:
+        - "topic/model-performance"
+        - "topic/working-practices"
+        - "topic/agents"
+        - "topic/guardrails"
+        - "topic/other"
+    validations:
+      required: true
+  - type: input
+    id: topic_secondary
+    attributes:
+      label: "Secondary topics (optional)"
+      description: "Comma-separated topic/* labels"
+      placeholder: "topic/guardrails, topic/working-practices"
+    validations:
+      required: false
+  - type: textarea
+    id: question
+    attributes:
+      label: "Question"
+      description: "One line. What are we trying to learn?"
+      placeholder: "Does spec-first prompting reduce review time in brownfield refactors?"
+    validations:
+      required: true
+  - type: textarea
+    id: prior
+    attributes:
+      label: "Prior / hypothesis"
+      description: "What do you currently believe, and why?"
+      placeholder: "I expect X because Y."
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: "Setup"
+      description: "Context, constraints, model/tooling, repos (NO sensitive data)."
+      placeholder: "Repo: <link>; Model: <...>; Constraints: <...>"
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: "Method"
+      description: "Steps taken; include prompts by reference (links/gists), not walls of text."
+      placeholder: "1) ... 2) ..."
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: "Results"
+      description: "What happened? Include evidence: metrics, diffs, screenshots, links."
+      placeholder: "Observed..."
+    validations:
+      required: true
+  - type: dropdown
+    id: decision
+    attributes:
+      label: "Decision"
+      options:
+        - "status/adopt"
+        - "status/avoid"
+        - "status/unclear"
+    validations:
+      required: true
+  - type: textarea
+    id: takeaway
+    attributes:
+      label: "Distilled takeaway (3 lines)"
+      description: "Write it so it can be pasted into the lab notebook."
+      placeholder: "- ...
+- ...
+- ..."
+    validations:
+      required: true
+  - type: textarea
+    id: next
+    attributes:
+      label: "Next experiment / follow-ups"
+      placeholder: "Try same workflow on <...> / compare model <...>"
+    validations:
+      required: false
