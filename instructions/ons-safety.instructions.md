@@ -5,7 +5,7 @@ When you're working in any repo, assume the following files/folders may be **exc
 
 If you need values typically stored in these files, prefer **IaC variables**, **Secret Manager**, or **environment variables** configured in deployment tooling.
 
-Example exclusion patterns:
+Assume the following files/folders must be excluded, do not read or rely on their contents, and do not suggest committing them:
 
 ```yaml
 "*":
