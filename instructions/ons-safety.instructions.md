@@ -1,3 +1,4 @@
+# General Instructions
 Files that may be invisible/excluded to Copilot Chat (treat as unavailable)
 
 When you're working in any repo, assume the following files/folders may be **excluded from Copilot Chat context** (even if they exist locally or are under git control). Don't ask users to paste them, don't rely on their contents, and never suggest committing secrets.
